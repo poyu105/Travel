@@ -3769,19 +3769,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\chen0\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\travel\\Travel\\Travel.csproj",
+      "projectUniqueName": "C:\\Users\\chen0\\code\\c#\\MVC_FinalProject\\Travel\\Travel\\Travel.csproj",
       "projectName": "Travel",
-      "projectPath": "C:\\Users\\User\\source\\repos\\travel\\Travel\\Travel.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\travel\\Travel\\obj\\",
+      "projectPath": "C:\\Users\\chen0\\code\\c#\\MVC_FinalProject\\Travel\\Travel\\Travel.csproj",
+      "packagesPath": "C:\\Users\\chen0\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\chen0\\code\\c#\\MVC_FinalProject\\Travel\\Travel\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\chen0\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
