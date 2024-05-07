@@ -189,7 +189,7 @@ namespace Travel.Areas.Identity.Pages.Account
                 /*UserName 請輸入發送者的信箱
                  * Password則輸入對應的密碼，可使用gmail應用程式密碼(需要在設定開啟兩步驗證)
                  * 防火牆問題則更改輸入&輸出規則，TCP->port:587，且檢查是否有其他防毒軟體阻擋。*/
-                smtpClient.Credentials = new NetworkCredential("chen06115@gmail.com", "mrqv zqwg czfj ylwr");
+                smtpClient.Credentials = new NetworkCredential("UserName", "Password");
 
                 smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtpClient.Send(message);
