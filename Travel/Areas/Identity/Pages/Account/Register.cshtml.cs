@@ -6,6 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
@@ -71,6 +74,12 @@ namespace Travel.Areas.Identity.Pages.Account
         /// </summary>
         public class InputModel
         {
+            [Required]
+            [StringLength(50, ErrorMessage = "Max 50 characters are allowed")]
+            [DataType(DataType.Text)]
+            [Display(Name = "UserName")]
+            public string UserName { get; set; }
+
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
@@ -115,7 +124,9 @@ namespace Travel.Areas.Identity.Pages.Account
             {
                 var user = CreateUser();
 
-                await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
+                user.UserName = Input.UserName;
+
+                await _userStore.SetUserNameAsync(user, Input.UserName, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
@@ -132,7 +143,7 @@ namespace Travel.Areas.Identity.Pages.Account
                         values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                    await SendEmailAsync(Input.Email, "Confirm your email",
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
@@ -153,6 +164,42 @@ namespace Travel.Areas.Identity.Pages.Account
 
             // If we got this far, something failed, redisplay form
             return Page();
+        }
+
+        //if the email was send successfully(Not automatically generated code)
+        private async Task SendEmailAsync(string email, string subject, string confirmLink)
+        {
+            try
+            {
+                MailMessage message = new MailMessage();
+                SmtpClient smtpClient = new SmtpClient();
+                message.From = new MailAddress("Testing@email.com");
+                message.To.Add(email);
+                message.Subject = subject;
+                message.IsBodyHtml = true;
+                message.Body = confirmLink;
+
+                //find own port and hostname, create own email that you want to send it from
+                smtpClient.Port = 587; //587 or 25
+                smtpClient.Host = "smtp.gmail.com";
+
+                smtpClient.EnableSsl = true;//啟用 SSL/TLS 加密連接
+                smtpClient.UseDefaultCredentials = false;
+
+                /*UserName 請輸入發送者的信箱
+                 * Password則輸入對應的密碼，可使用gmail應用程式密碼(需要在設定開啟兩步驗證)
+                 * 防火牆問題則更改輸入&輸出規則，TCP->port:587，且檢查是否有其他防毒軟體阻擋。*/
+                smtpClient.Credentials = new NetworkCredential("chen06115@gmail.com", "mrqv zqwg czfj ylwr");
+
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.Send(message);
+
+            }
+            catch (Exception ex)
+            {
+                // 在這裡拋出異常，以便在方法調用端處理
+                throw new Exception("Failed to send email. See inner exception for details.", ex);
+            }
         }
 
         private TravelUser CreateUser()

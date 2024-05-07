@@ -27,7 +27,5 @@ public class AppLicationUserEntityConfiguration : IEntityTypeConfiguration<Trave
 {
     public void Configure(EntityTypeBuilder<TravelUser> builder)
     {
-        builder.Property(x=>x.FirstName).HasMaxLength(50);
-        builder.Property(x=> x.LastName).HasMaxLength(50);
     }
 }
