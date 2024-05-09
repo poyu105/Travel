@@ -6,22 +6,22 @@ var connectionString = builder.Configuration.GetConnectionString("TravelContextC
 
 builder.Services.AddDbContext<TravelContext>(options => options.UseSqlServer(connectionString));
 
-//¨Ï¥ÎªÌ¦WºÙ³]¸m
+//ä½¿ç”¨è€…åç¨±è¨­ç½®
 builder.Services.AddDefaultIdentity<TravelUser>(options =>
 {
     options.SignIn.RequireConfirmedAccount = true;
-    options.User.RequireUniqueEmail = false; //¤£¦A­n¨D¹q¤l¶l¥ó°ß¤@
-    options.User.AllowedUserNameCharacters = null; // ¤¹³\¥ô¦ó¦r²Å§@¬°¥Î¤á¦W
+    options.User.RequireUniqueEmail = false; //ä¸å†è¦æ±‚é›»å­éƒµä»¶å”¯ä¸€
+    options.User.AllowedUserNameCharacters = null; // å…è¨±ä»»ä½•å­—ç¬¦ä½œç‚ºç”¨æˆ¶å
 }).AddEntityFrameworkStores<TravelContext>();
 
-//±K½X³]¸m
+//å¯†ç¢¼è¨­ç½®
 builder.Services.Configure<IdentityOptions>(options =>
 {
-    options.Password.RequireDigit = true; //¦Ü¤Ö¤@­Ó¼Æ¦r
-    options.Password.RequireLowercase = true; //¦Ü¤Ö¤@­Ó¤p¼g¦r¥À
-    options.Password.RequireUppercase = true; //¦Ü¤Ö¤@­Ó¤j¼g¦r¥À
-    options.Password.RequireNonAlphanumeric = false; //¤£»İ­n«D¼Æ¦r©M«D¦r¥Àªº²Å¸¹
-    //options.Password.RequiredLength = 8; // ³Ì¤p±K½Xªø«×(¹w³]6 max:100)
+    options.Password.RequireDigit = true; //è‡³å°‘ä¸€å€‹æ•¸å­—
+    options.Password.RequireLowercase = true; //è‡³å°‘ä¸€å€‹å°å¯«å­—æ¯
+    options.Password.RequireUppercase = true; //è‡³å°‘ä¸€å€‹å¤§å¯«å­—æ¯
+    options.Password.RequireNonAlphanumeric = false; //ä¸éœ€è¦éæ•¸å­—å’Œéå­—æ¯çš„ç¬¦è™Ÿ
+    //options.Password.RequiredLength = 8; // æœ€å°å¯†ç¢¼é•·åº¦(é è¨­6 max:100)
 });
 
 
