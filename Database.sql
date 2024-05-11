@@ -14,9 +14,9 @@ CREATE TABLE [User] (
 -- Table: Travel
 CREATE TABLE Travel (
   id INT PRIMARY KEY NOT NULL,
-  place VARCHAR(60) NOT NULL,
-  [description] VARCHAR(255) NOT NULL,
-  picture VARCHAR(255) NOT NULL,
+  place VARCHAR(255) NOT NULL,
+  start_date DATETIME2 NOT NULL,
+  end_date DATETIME2 NOT NULL,
   create_at DATETIME2 NOT NULL DEFAULT GETDATE(),
   update_at DATETIME2 NOT NULL DEFAULT GETDATE()
 );
@@ -27,16 +27,28 @@ CREATE TABLE Reservation (
   people INT NOT NULL,
   [status] INT NOT NULL,
   user_id INT FOREIGN KEY REFERENCES [User](id),
-  attractions INT NOT NULL FOREIGN KEY REFERENCES Travel(id),
+  travel_id INT NOT NULL FOREIGN KEY REFERENCES Travel(id),
   remark VARCHAR(255),
   create_at DATETIME2 NOT NULL DEFAULT GETDATE(),
   update_at DATETIME2 NOT NULL DEFAULT GETDATE()
 );
 
--- Table: admin
-CREATE TABLE admin (
+-- Table: Admin
+CREATE TABLE Admin (
   id INT PRIMARY KEY NOT NULL,
   user_id INT NOT NULL FOREIGN KEY REFERENCES [User](id),
   created_at DATETIME2 NOT NULL DEFAULT GETDATE(),
   updated_at DATETIME2 NOT NULL DEFAULT GETDATE()
 );
+
+-- Table: Attractions
+CREATE TABLE Attractions (
+  id INT PRIMARY KEY NOT NULL,
+  place VARCHAR(255),
+  [description] VARCHAR(255) NOT NULL,
+  picture VARCHAR(255) NOT NULL,
+  travel_id INT NOT NULL FOREIGN KEY REFERENCES Travel(id),
+  create_at DATETIME2 NOT NULL DEFAULT GETDATE(),
+  update_at DATETIME2 NOT NULL DEFAULT GETDATE()
+);
+
