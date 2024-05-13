@@ -1,0 +1,19 @@
+﻿@{
+}
+@using Microsoft.AspNetCore.Identity
+@using Travel.Areas.Identity.Data
+@inject SignInManager<TravelUser> SignInManager
+<div class="row">
+    <h1>我的行程</h1>
+    <hr />
+</div>
+@if (SignInManager.IsSignedIn(User))
+{
+
+}
+else
+{
+    <div class="p-2 alert alert-danger alert-dismissible" role="alert">
+        <h4 class="m-0">請先<a asp-area="Identity" asp-page="/Account/Login">登入</a>!</h4>
+    </div>
+}

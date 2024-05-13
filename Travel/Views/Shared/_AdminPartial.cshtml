@@ -1,0 +1,20 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Travel.Areas.Identity.Data
+@inject SignInManager<TravelUser> SignInManager
+
+@{
+    // 確認當前使用者是否已經登入
+    var user = await SignInManager.UserManager.GetUserAsync(User);
+
+    // 如果使用者存在且為管理員，則顯示新增景點的連結
+    bool isAdmin = user != null && user.Admin;
+}
+
+@if (isAdmin)
+{
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item bg-warning bg-opacity-50 rounded">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index"><i class="bi bi-database-fill-gear"></i>景點管理<small>(管理員功能)</small></a>
+        </li>
+    </ul>
+}

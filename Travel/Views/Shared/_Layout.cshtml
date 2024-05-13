@@ -23,17 +23,21 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item nav-item-hover">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house"></i>Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house"></i>首頁</a>
                         </li>
                         <li class="nav-item nav-item-hover">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="bi bi-shield-check"></i>Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Journey" asp-action="Index"><i class="bi bi-pin-map"></i>我的行程</a>
                         </li>
+                        <li class="nav-item nav-item-hover">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Reservation" asp-action="Index"><i class="bi bi-calendar2-check"></i>我的預約</a>
+                        </li>
+                        <partial name="_AdminPartial" />
                     </ul>
                     <ul class="navbar-nav">
                         <!--search form-->
                         <li class="nav-item mx-3">
                             <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <input class="form-control me-2" type="search" placeholder="請輸入景點名稱" aria-label="Search">
                                 <button class="btn btn-outline-success" type="submit">Search</button>
                             </form>
                         </li>
@@ -51,7 +55,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - Travel - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2024 - Travel
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

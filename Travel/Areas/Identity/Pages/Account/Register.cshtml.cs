@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Net;
@@ -81,6 +82,18 @@ namespace Travel.Areas.Identity.Pages.Account
             [Display(Name = "UserName")]
             public string UserName { get; set; }
 
+            [Required]
+            [StringLength(10, ErrorMessage = "Max 10 characters are alloew")]
+            [DataType(DataType.Text)]
+            [Display(Name = "IdNumber")]
+            public string IdNumber { get; set; }
+
+            [Required]
+            [Length(7,50)]
+            [DataType(DataType.PhoneNumber)]
+            [Display(Name = "Phone")]
+            public string PhoneNumber { get; set; }
+
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
@@ -125,7 +138,9 @@ namespace Travel.Areas.Identity.Pages.Account
             {
                 var user = CreateUser();
 
-                user.UserName = Input.UserName;
+                //user.UserName = Input.UserName;
+                user.IdNumber = Input.IdNumber;
+                user.PhoneNumber= Input.PhoneNumber;
 
                 await _userStore.SetUserNameAsync(user, Input.UserName, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);

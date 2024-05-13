@@ -9,6 +9,7 @@ namespace Travel.Areas.Identity.Data;
 // Add profile data for application users by adding properties to the TravelUser class
 public class TravelUser : IdentityUser
 {
-
+    public bool Admin { get; set; } = false;
+    public string IdNumber { get; set; }
 }
 
