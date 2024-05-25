@@ -3,11 +3,15 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Travel.Areas.Identity.Data;
+using Travel.Models;
+using Travel.Models.Entity;
 
 namespace Travel.Areas.Identity.Data;
 
 public class TravelContext : IdentityDbContext<TravelUser>
 {
+    public DbSet<Attraction> Attraction { get; set; }
+
     public TravelContext(DbContextOptions<TravelContext> options)
         : base(options)
     {
