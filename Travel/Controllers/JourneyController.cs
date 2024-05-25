@@ -2,7 +2,7 @@
 
 namespace Travel.Controllers
 {
-    public class Admin : Controller
+    public class JourneyController : Controller
     {
         public IActionResult Index()
         {

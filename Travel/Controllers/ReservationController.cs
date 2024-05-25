@@ -2,7 +2,7 @@
 
 namespace Travel.Controllers
 {
-    public class Reservation : Controller
+    public class ReservationController : Controller
     {
         public IActionResult Index()
         {

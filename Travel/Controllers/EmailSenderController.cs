@@ -3,7 +3,7 @@ using System.Net;
 
 namespace Travel.Controllers
 {
-    public class EmailSender
+    public class EmailSenderController
     {
         //if the email was send successfully(Not automatically generated code)
         internal static async Task SendEmailAsync(string email, string subject, string confirmLink)
