@@ -74,7 +74,7 @@ namespace Travel.Areas.Identity.Pages.Account
                     values: new { area = "Identity", code },
                     protocol: Request.Scheme);
 
-                await Controllers.EmailSender.SendEmailAsync(
+                await Controllers.EmailSenderController.SendEmailAsync(
                     Input.Email,
                     "Reset Password",
                     $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
