@@ -8,7 +8,7 @@ VALUES
 (5, 'admin2', 'admin2', 'E123456789', 'admin2@example.com', GETDATE(), GETDATE());
 
 -- 假資料 Travel
-INSERT INTO Travel (id, place, icon_num, start_date, end_date, created_at, updated_at)
+INSERT INTO Journey (id, place, icon_num, start_date, end_date, created_at, updated_at)
 VALUES
 (1, 'Destination A', '1', '2024-05-15', '2024-05-20', GETDATE(), GETDATE()),
 (2, 'Destination B', '2', '2024-06-10', '2024-06-15', GETDATE(), GETDATE()),
@@ -17,7 +17,7 @@ VALUES
 (5, 'Destination E', '2', '2024-09-20', '2024-09-25', GETDATE(), GETDATE());
 
 -- 假資料 Reservation
-INSERT INTO Reservation (id, people, [status], user_id, travel_id, remark, created_at, updated_at)
+INSERT INTO Reservation (id, people, [status], user_id, Journey_id, remark, created_at, updated_at)
 VALUES
 (1, 2, 1, 1, 1, 'Remark for reservation 1', GETDATE(), GETDATE()),
 (2, 3, 1, 2, 2, 'Remark for reservation 2', GETDATE(), GETDATE()),
@@ -31,7 +31,7 @@ VALUES
 (1, 2, GETDATE(), GETDATE());
 
 -- 假資料 Attractions
-INSERT INTO Attractions (id, place, [description], picture, travel_id, created_at, updated_at)
+INSERT INTO Attractions (id, place, [description], picture, Journey_id, created_at, updated_at)
 VALUES
 (1, 'Attraction A', 'Description for Attraction A', 'picture_url_for_attraction_a.jpg', 1, GETDATE(), GETDATE()),
 (2, 'Attraction B', 'Description for Attraction B', 'picture_url_for_attraction_b.jpg', 1, GETDATE(), GETDATE()),
