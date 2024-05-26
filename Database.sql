@@ -11,8 +11,8 @@ CREATE TABLE [User] (
   updated_at DATETIME2 NOT NULL DEFAULT GETDATE()
 );
 
--- Table: Travel
-CREATE TABLE Travel (
+-- Table: Journey
+CREATE TABLE Journey (
   id INT PRIMARY KEY NOT NULL,
   place VARCHAR(255) NOT NULL,
   icon_num INT NOT NULL,
