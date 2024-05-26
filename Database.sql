@@ -1,4 +1,4 @@
-USE [YourDatabaseName]; -- YourDatabaseName替換成你的資料庫名稱，我是用Travel
+USE [Travel]; -- YourDatabaseName替換成你的資料庫名稱，我是用Travel
 
 -- Table: User
 CREATE TABLE [User] (
@@ -28,7 +28,7 @@ CREATE TABLE Reservation (
   people INT NOT NULL,
   [status] INT NOT NULL,
   user_id INT FOREIGN KEY REFERENCES [User](id),
-  travel_id INT NOT NULL FOREIGN KEY REFERENCES Travel(id),
+  Journey_id INT NOT NULL FOREIGN KEY REFERENCES Journey(id),
   remark VARCHAR(255),
   created_at DATETIME2 NOT NULL DEFAULT GETDATE(),
   updated_at DATETIME2 NOT NULL DEFAULT GETDATE()
@@ -48,7 +48,7 @@ CREATE TABLE Attractions (
   place VARCHAR(255),
   [description] VARCHAR(255) NOT NULL,
   picture VARCHAR(255) NOT NULL,
-  travel_id INT NOT NULL FOREIGN KEY REFERENCES Travel(id),
+  Journey_id INT NOT NULL FOREIGN KEY REFERENCES Journey(id),
   created_at DATETIME2 NOT NULL DEFAULT GETDATE(),
   updated_at DATETIME2 NOT NULL DEFAULT GETDATE()
 );
