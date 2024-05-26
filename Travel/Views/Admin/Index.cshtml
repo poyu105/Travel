@@ -23,7 +23,9 @@
                 <p>@attraction.Description</p>
             </div>
             <div class="col-sm-2">
-                <button class="btn btn-warning">修改</button>
+                <button class="btn btn-warning">
+                    <a class="link-underline-opacity-0 link-light" asp-action="editAttraction" asp-controller="Admin" asp-route-attractionID="@attraction.Id">修改</a>
+                </button>
                 <button class="btn btn-danger delete-button" data-id="@attraction.Id">刪除</button>
             </div>
         </div>

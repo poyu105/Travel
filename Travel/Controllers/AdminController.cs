@@ -70,5 +70,43 @@ namespace Travel.Controllers
             }
             return RedirectToAction("Index", "Admin");
         }
+
+        [HttpGet]
+        public async Task<IActionResult> editAttraction(Guid attractionID)
+        {
+            var attraction = await _context.Attraction.FindAsync(attractionID);
+            return View(attraction);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> editAttraction(Attraction view_attraction)
+        {
+            // 檢查是否輸入資料
+            if (!ModelState.IsValid)
+            {
+                return View(view_attraction);
+            }
+
+            // 檢查是否有重複的景點名稱，除了當前的景點名稱
+            if (_context.Attraction.Any(a => a.Name == view_attraction.Name && a.Id != view_attraction.Id))
+            {
+                ModelState.AddModelError("Name", "景點名稱已存在，請輸入不同的名稱!");
+                return View(view_attraction);
+            }
+            var attraction = await _context.Attraction.FindAsync(view_attraction.Id);
+            if(attraction != null)
+            {
+                attraction.Name = view_attraction.Name;
+                attraction.Place = view_attraction.Place;
+                attraction.Description = view_attraction.Description;
+                attraction.Type = view_attraction.Type;
+                //Picture = view_attraction.Picture
+
+                _context.Attraction.Update(attraction);
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction("Index", "Admin");
+
+        }
     }
 }
