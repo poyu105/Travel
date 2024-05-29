@@ -44,10 +44,10 @@ CREATE TABLE Admin (
 -- Table: Attractions
 CREATE TABLE Attractions (
   id INT PRIMARY KEY NOT NULL,
-  place VARCHAR(255),
+  [name] VARCHAR(255),
   [description] VARCHAR(255) NOT NULL,
   picture VARCHAR(255) NOT NULL,
-  icon_num INT NOT NULL,
+  [type] INT NOT NULL,
   Journey_id INT NOT NULL FOREIGN KEY REFERENCES Journey(id),
   created_at DATETIME2 NOT NULL DEFAULT GETDATE(),
   updated_at DATETIME2 NOT NULL DEFAULT GETDATE()
