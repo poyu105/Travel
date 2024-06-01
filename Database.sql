@@ -15,10 +15,10 @@ CREATE TABLE [User] (
 CREATE TABLE Journey (
   id INT PRIMARY KEY NOT NULL,
   place VARCHAR(255) NOT NULL,
-  start_date DATETIME2 NOT NULL,
-  end_date DATETIME2 NOT NULL,
-  created_at DATETIME2 NOT NULL DEFAULT GETDATE(),
-  updated_at DATETIME2 NOT NULL DEFAULT GETDATE()
+  start_date DATETIME2,
+  end_date DATETIME2,
+  created_at DATETIME2 DEFAULT GETDATE(),
+  updated_at DATETIME2 DEFAULT GETDATE()
 );
 
 -- Table: Reservation
@@ -42,14 +42,12 @@ CREATE TABLE Admin (
 );
 
 -- Table: Attractions
-CREATE TABLE Attractions (
+CREATE TABLE Attraction (
   id INT PRIMARY KEY NOT NULL,
   [name] VARCHAR(255),
   [description] VARCHAR(255) NOT NULL,
-  picture VARCHAR(255) NOT NULL,
-  [type] INT NOT NULL,
   Journey_id INT NOT NULL FOREIGN KEY REFERENCES Journey(id),
-  created_at DATETIME2 NOT NULL DEFAULT GETDATE(),
-  updated_at DATETIME2 NOT NULL DEFAULT GETDATE()
+  created_at DATETIME2 DEFAULT GETDATE(),
+  updated_at DATETIME2 DEFAULT GETDATE()
 );
 

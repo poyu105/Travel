@@ -3,13 +3,21 @@
 @using Microsoft.AspNetCore.Identity
 @using Travel.Areas.Identity.Data
 @inject SignInManager<TravelUser> SignInManager
+@model List<Travel.Models.Entity.Journey>
 <div class="row">
     <h1>我的行程</h1>
     <hr />
 </div>
 @if (SignInManager.IsSignedIn(User))
 {
-
+    @foreach (var journey in Model)
+    {
+        <div class="row">
+            <div class="col">
+                <h2>@journey.place</h2>
+            </div>
+        </div>
+    }
 }
 else
 {

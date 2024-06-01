@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Travel.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\chen0\\code\\c#\\MVC_FinalProject\\Travel\\Travel\\wwwroot\\Maskgroup.png",
+      "PackagePath": "staticwebassets\\Maskgroup.png"
+    },
+    {
       "Id": "C:\\Users\\chen0\\code\\c#\\MVC_FinalProject\\Travel\\Travel\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

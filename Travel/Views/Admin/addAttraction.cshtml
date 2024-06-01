@@ -1,4 +1,7 @@
 ﻿@model Travel.Models.Entity.Attraction
+@{
+    
+}
 <div class="row">
     <h1 class="col-md-9">新增景點</h1>
     <div class="col-md-3 position-relative">
@@ -9,6 +12,61 @@
     <hr />
 </div>
 <div class="container">
+    <table>
+        <tbody>
+            <tr>
+                <th>
+                    <h2>景點一:</h2>
+                </th>
+                <td>
+                    <p></p>
+                    <button class="btn btn-primary me-3 mb-1">
+                        <a class="link-underline-opacity-0 link-light" asp-controller="Admin" asp-action="addAttraction">新增景點<i class="bi bi-plus-square"></i></a>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <h2>景點二:</h2>
+                </th>
+                <td>
+                    <button class="btn btn-primary me-3 mb-1">
+                        <a class="link-underline-opacity-0 link-light" asp-controller="Admin" asp-action="addAttraction">新增景點<i class="bi bi-plus-square"></i></a>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <h2>景點三:</h2>
+                </th>
+                <td>
+                    <button class="btn btn-primary me-3 mb-1">
+                        <a class="link-underline-opacity-0 link-light" asp-controller="Admin" asp-action="addAttraction">新增景點<i class="bi bi-plus-square"></i></a>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <h2>景點四:</h2>
+                </th>
+                <td>
+                    <button class="btn btn-primary me-3 mb-1">
+                        <a class="link-underline-opacity-0 link-light" asp-controller="Admin" asp-action="addAttraction">新增景點<i class="bi bi-plus-square"></i></a>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <h2>景點五:</h2>
+                </th>
+                <td>
+                    <button class="btn btn-primary me-3 mb-1">
+                        <a class="link-underline-opacity-0 link-light" asp-controller="Admin" asp-action="addAttraction">新增景點<i class="bi bi-plus-square"></i></a>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <form method="post">
         <div class="mt-3">
             <label class="form-label">景點名稱</label>
@@ -16,24 +74,14 @@
             <span class="text-danger" asp-validation-for="Name"></span>
         </div>
         <div class="mt-3">
-            <label class="form-label">地點</label>
-            <input type="text" class="form-control" asp-for="Place" />
-            <span class="text-danger" asp-validation-for="Place"></span>
-        </div>
-        <div class="mt-3">
             <label class="form-label">描述</label>
             <input type="text" class="form-control" asp-for="Description" />
             <span class="text-danger" asp-validation-for="Description"></span>
         </div>
         <div class="mt-3">
-            <label class="form-label">類型</label>
-            <input type="text" class="form-control" asp-for="Type" />
-            <span class="text-danger" asp-validation-for="Type"></span>
-        </div>
-        <div class="mt-3">
             <button type="submit" class="btn btn-primary">Save</button>
             <button type="button" class="btn btn-danger">
-                <a class="link-underline-opacity-0 link-light" asp-controller="Admin" asp-action="Index">Cancel</a>
+                <a class="link-underline-opacity-0 link-light" asp-controller="Journey" asp-action="addJourney">Cancel</a>
             </button>
         </div>
     </form>

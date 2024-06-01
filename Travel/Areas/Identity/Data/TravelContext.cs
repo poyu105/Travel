@@ -11,6 +11,7 @@ namespace Travel.Areas.Identity.Data;
 public class TravelContext : IdentityDbContext<TravelUser>
 {
     public DbSet<Attraction> Attraction { get; set; }
+    public DbSet<Journey> Journey { get; set; }
 
     public TravelContext(DbContextOptions<TravelContext> options)
         : base(options)

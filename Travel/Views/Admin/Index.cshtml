@@ -1,32 +1,22 @@
-﻿@model List<Travel.Models.Entity.Attraction>
+﻿@model List<Travel.Models.Entity.Journey>
 @{
 }
 
 <div class="row">
-    <h1 class="col-md-9">景點管理</h1>
+    <h1 class="col-md-9">行程管理</h1>
     <div class="col-md-3 position-relative">
         <button class="btn btn-primary position-absolute bottom-0 end-0 me-3 mb-1">
-            <a class="link-underline-opacity-0 link-light" asp-controller="Admin" asp-action="addAttraction">新增景點<i class="bi bi-plus-square"></i></a>
+            <a class="link-underline-opacity-0 link-light" asp-controller="Journey" asp-action="addJourney">新增行程<i class="bi bi-plus-square"></i></a>
         </button>
     </div>
     <hr />
 </div>
 <div class="container">
-    @foreach(var attraction in Model){
+    @foreach (var journey in Model)
+    {
         <div class="row">
             <div class="col">
-                <h2>@attraction.Name</h2>
-                <p>@attraction.Place</p>
-                <span>類型:@attraction.Type</span>
-            </div>
-            <div class="col">
-                <p>@attraction.Description</p>
-            </div>
-            <div class="col-sm-2">
-                <button class="btn btn-warning">
-                    <a class="link-underline-opacity-0 link-light" asp-action="editAttraction" asp-controller="Admin" asp-route-attractionID="@attraction.Id">修改</a>
-                </button>
-                <button class="btn btn-danger delete-button" data-id="@attraction.Id">刪除</button>
+                <h2>@journey.place</h2>
             </div>
         </div>
     }

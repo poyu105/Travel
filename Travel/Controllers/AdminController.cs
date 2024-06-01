@@ -19,8 +19,8 @@ namespace Travel.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var attractions = _context.Attraction.ToList();
-            return View(attractions);
+            var journey = _context.Journey.ToList();
+            return View(journey);
         }
 
         [HttpGet]
@@ -47,12 +47,8 @@ namespace Travel.Controllers
             }
             var attraction = new Attraction
             {
-                Id = Guid.NewGuid(),
                 Name = view_attraction.Name,
-                Place = view_attraction.Place,
                 Description = view_attraction.Description,
-                Type = view_attraction.Type,
-                //Picture = view_attraction.Picture
             };
             await _context.Attraction.AddAsync(attraction);
             await _context.SaveChangesAsync();
@@ -97,10 +93,7 @@ namespace Travel.Controllers
             if(attraction != null)
             {
                 attraction.Name = view_attraction.Name;
-                attraction.Place = view_attraction.Place;
                 attraction.Description = view_attraction.Description;
-                attraction.Type = view_attraction.Type;
-                //Picture = view_attraction.Picture
 
                 _context.Attraction.Update(attraction);
                 await _context.SaveChangesAsync();

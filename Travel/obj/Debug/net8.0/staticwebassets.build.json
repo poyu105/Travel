@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gbvQiRs3ceS4OK9+8yhq4ZiCCAJxqQ6Fjqzvyrb8m2g=",
+  "Hash": "y1QPqz0vR5/0CDGpAjvNRIDYouQ5N4dpXxYDvQcbN6Y=",
   "Source": "Travel",
   "BasePath": "_content/Travel",
   "Mode": "Default",
@@ -2333,6 +2333,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\chen0\\code\\c#\\MVC_FinalProject\\Travel\\Travel\\wwwroot\\Maskgroup.png",
+      "SourceId": "Travel",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\chen0\\code\\c#\\MVC_FinalProject\\Travel\\Travel\\wwwroot\\",
+      "BasePath": "_content/Travel",
+      "RelativePath": "Maskgroup.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Maskgroup.png"
     }
   ]
 }
