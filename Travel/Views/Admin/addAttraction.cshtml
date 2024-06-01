@@ -16,12 +16,12 @@
         @for (int i = 0; i < Model.Attractions.Count; i++)
         {
             <div class="mt-3">
-                <label class="form-label">景點@(i + 1)名稱</label>
+                <label class="fs-3 form-label">景點@(i + 1)名稱</label>
                 <input type="text" class="form-control" asp-for="Attractions[i].Name" />
                 <span class="text-danger" asp-validation-for="Attractions[i].Name"></span>
             </div>
             <div class="mt-3">
-                <label class="form-label">描述</label>
+                <label class="fs-3 form-label">描述</label>
                 <input type="text" class="form-control" asp-for="Attractions[i].Description" />
                 <span class="text-danger" asp-validation-for="Attractions[i].Description"></span>
             </div>
