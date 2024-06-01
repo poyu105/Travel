@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using Travel.Areas.Identity.Data;
 using Travel.Models;
 using Travel.Models.Entity;
+using Travel.ViewModels;
 
 namespace Travel.Controllers
 {
@@ -26,36 +27,38 @@ namespace Travel.Controllers
         [HttpGet]
         public IActionResult addAttraction()
         {
-            return View();
+            var viewModel = new AttractionListViewModel();
+            return View(viewModel);
         }
 
         [HttpPost]
-        public async Task<IActionResult> addAttraction(Attraction view_attraction)
+        public async Task<IActionResult> AddAttraction(AttractionListViewModel viewModel)
         {
-
-            // 檢查是否輸入資料
             if (!ModelState.IsValid)
             {
-                return View(view_attraction);
+                return View(viewModel);
             }
 
-            // 檢查是否有重複的景點名稱
-            if (_context.Attraction.Any(a => a.Name == view_attraction.Name))
+            foreach (var attraction in viewModel.Attractions)
             {
-                ModelState.AddModelError("Name", "景點名稱已存在，請輸入不同的名稱!");
-                return View(view_attraction);
+                if (string.IsNullOrWhiteSpace(attraction.Name) || string.IsNullOrWhiteSpace(attraction.Description))
+                {
+                    continue;
+                }
+
+                if (_context.Attraction.Any(a => a.Name == attraction.Name))
+                {
+                    ModelState.AddModelError("Attractions.Name", $"景點名稱 '{attraction.Name}' 已存在，請輸入不同的名稱!");
+                    return View(viewModel);
+                }
+                await _context.Attraction.AddAsync(attraction);
             }
-            var attraction = new Attraction
-            {
-                Name = view_attraction.Name,
-                Description = view_attraction.Description,
-            };
-            await _context.Attraction.AddAsync(attraction);
+
             await _context.SaveChangesAsync();
             return RedirectToAction("Index", "Admin");
         }
 
-        [HttpPost]
+    [HttpPost]
         public async Task<IActionResult> delAttraction(Guid id)
         {
             var attraction = await _context.Attraction.FindAsync(id);

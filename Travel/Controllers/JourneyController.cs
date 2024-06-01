@@ -31,6 +31,10 @@ namespace Travel.Controllers
         [HttpPost]
         public async Task<IActionResult> addJourney(Journey view_journey)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(view_journey);
+            }
             var journey = new Journey
             {
                 place = view_journey.place,
