@@ -35,6 +35,14 @@ namespace Travel.Controllers
             {
                 return View(view_journey);
             }
+
+            // 檢查是否有重複的景點名稱，除了當前的景點名稱
+            if (_context.Journey.Any(a => a.place == view_journey.place && a.id != view_journey.id))
+            {
+                ModelState.AddModelError("place", "行程名稱已存在，請輸入不同的名稱!");
+                return View(view_journey);
+            }
+
             var journey = new Journey
             {
                 place = view_journey.place,
@@ -47,29 +55,33 @@ namespace Travel.Controllers
             // Pass the new Journey ID to the addAttraction action
             return RedirectToAction("addAttraction", "Admin", new { journeyId = journey.id });
         }
-        [HttpPatch]
+        [HttpGet]
+        public async Task<IActionResult> editJourney(int journeyID)
+        {
+            var journey = await _context.Journey.FindAsync(journeyID);
+            return View(journey);
+        }
+        [HttpPost]
         public async Task<IActionResult> editJourney(Journey view_journey)
         {
-            // 檢查是否輸入資料
-            if (!ModelState.IsValid)
+            if(!ModelState.IsValid)
             {
                 return View(view_journey);
             }
-
             var journey = await _context.Journey.FindAsync(view_journey.id);
             if (journey != null)
             {
                 journey.place = view_journey.place;
-                journey.start_date = view_journey.start_date;
-                journey.end_date = view_journey.end_date;
+                journey.start_date=view_journey.start_date;
+                journey.end_date=view_journey.end_date;
 
                 _context.Journey.Update(journey);
                 await _context.SaveChangesAsync();
             }
-            return RedirectToAction("showJourney", "Admin");
+            return RedirectToAction("editAttraction", "Admin", new { journeyId = view_journey.id});
         }
-        [HttpPost]
-        public async Task<IActionResult> deleteJourney(Guid id)
+        [HttpGet]
+        public async Task<IActionResult> delJourney(int id)
         {
             var journey = await _context.Journey.FindAsync(id);
             if (journey != null)
@@ -77,7 +89,7 @@ namespace Travel.Controllers
                 _context.Journey.Remove(journey);
                 await _context.SaveChangesAsync();
             }
-                return RedirectToAction("showJourney", "Admin");
+                return RedirectToAction("index", "Admin");
         }
     }
 }

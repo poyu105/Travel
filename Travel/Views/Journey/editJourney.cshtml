@@ -3,7 +3,7 @@
 
 }
 <div class="row">
-    <h1 class="col-md-9">新增行程</h1>
+    <h1 class="col-md-9">修改行程</h1>
     <div class="col-md-3 position-relative">
         <button class="btn btn-primary position-absolute bottom-0 end-0 me-3 mb-1">
             <a class="link-underline-opacity-0 link-light" asp-controller="Admin" asp-action="Index"><i class="bi bi-box-arrow-left me-1"></i>返回</a>
@@ -41,7 +41,7 @@
         <!-- 標籤紙 -->
         <div class="bg-warning-subtle w-25 h-100% shadow-lg text-center p-2">
             <h3 class="fw-bold text-center">
-                <form method="post">
+                <form method="post" asp-route-id="@Model.id">
                     <h4 class="fw-bold form-label text-start">行程名稱</h4>
                     <input type="text" class="form-control" placeholder="行程名稱" asp-for="place" />
                     <span class="fs-5 text-danger" asp-validation-for="place"></span>

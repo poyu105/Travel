@@ -1,6 +1,5 @@
 ﻿@model List<JourneyAttractionViewModel>
-@{
-}
+@using Essentials
 
 <div class="row">
     <h1 class="col-md-9">行程管理</h1>
@@ -12,23 +11,90 @@
     <hr />
 </div>
 <div class="container">
-    <partial name="_AttractionPartial" />
+@for (int i = Model.Count - 1; i >= 0; i--)
+{
+    var journey = Model[i].Journey;
+    var attraction = Model[i].Attraction;
+
+    <div class="d-flex align-items-center justify-content-center p-2 h1">
+        <div class="travelCard rounded-5 shadow-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <div class="p-5">
+                <div class="d-flex align-items-center justify-content-center mx-5">
+                    <div class="rounded-circle bg-body-secondary p-3">
+                        <i class="bi bi-house"></i>
+                    </div>
+                    <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
+                    <div class="rounded-circle bg-body-secondary p-3">
+                        <i class="bi bi-camera"></i>
+                    </div>
+                    <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
+                    <div class="rounded-circle bg-body-secondary p-3">
+                        <i class="bi bi-cup-hot"></i>
+                    </div>
+                    <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
+                    <div class="rounded-circle bg-body-secondary p-3">
+                        <i class="bi bi-camera"></i>
+                    </div>
+                    <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
+                    <div class="rounded-circle bg-body-secondary p-3">
+                        <i class="bi bi-house"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 重複 -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content">
+                    <button type="button" class="btn-close text-center position-absolute end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-header">
+                        <h1 class="modal-title fw-bold" id="exampleModalToggleLabel">
+                            <span class="badge text-bg-dark rounded-pill">@journey.place</span>
+                        </h1>
+                    </div>
+                    @foreach (var attr in attraction)
+                    {
+                        <div class="modal-header">
+                            <h1 class="modal-title fw-bold" id="exampleModalToggleLabel">
+                                <span class="badge text-bg-secondary rounded-pill">@attr.Name</span>
+                            </h1>
+                        </div>
+                        <div class="modal-body">
+                            <h4 class="fw-bold">@attr.Description</h4>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <!-- 標籤紙 -->
+        <div class="bg-warning-subtle w-25 h-100% shadow-lg text-center p-2">
+            <h3 class="fw-bold text-center">@journey.place</h3>
+            <p class="h4">From: @journey.start_date.ToString("yyyy/MM/dd") <br />To: @journey.end_date.ToString("yyyy/MM/dd")</p>
+                <button class="btn btn-warning">
+                    <a class="page-link" asp-action="editJourney" asp-controller="Journey" asp-route-journeyID="@journey.id">修改</a>
+                </button>
+                <button class="btn btn-danger delete-button" data-id="@journey.id">刪除</button>
+        </div>
+    </div>
+}
 </div>
 
 @section Scripts {
     <script>
         $(document).ready(function () {
             $(".delete-button").click(function () {
-                var attractionId = $(this).data("id");
+                var journey_id = $(this).data("id");
                 if (confirm("確定要刪除此景點嗎？")) {
                     $.ajax({
                         type: "POST",
                         url: "@Url.Action("delAttraction", "Admin")",
                         data: {
                             __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val(),
-                            id: attractionId
+                            journey_id: journey_id
                         },
                         success: function () {
+                            alert("已成功刪除!");
                             location.reload();
                         },
                         error: function () {
