@@ -44,11 +44,16 @@
         <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content">
                 <button type="button" class="btn-close text-center position-absolute end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header">
+                    <h1 class="modal-title fw-bold" id="exampleModalToggleLabel">
+                        <span class="badge text-bg-dark rounded-pill">@journey.place</span>
+                    </h1>
+                </div>
                 @foreach(var attr in attraction)
                 {
                     <div class="modal-header">
                         <h1 class="modal-title fw-bold" id="exampleModalToggleLabel">
-                            <span class="badge text-bg-dark rounded-pill">@attr.Name</span>
+                            <span class="badge text-bg-secondary rounded-pill">@attr.Name</span>
                         </h1>
                     </div>
                     <div class="modal-body">
@@ -73,7 +78,7 @@
                         </div>
                         <div class="col-6 col-md-8">
                             <input type="text" class="form-control form-control-lg bg-secondary-subtle" autocomplete="username" aria-required="true" placeholder="身分證" />
-                        </div>
+                        </div>                   
                     </div>
                     <div class="row p-1 mb-3">
                         <div class="col-md-12">
