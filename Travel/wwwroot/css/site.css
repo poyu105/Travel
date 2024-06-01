@@ -24,3 +24,14 @@ body {
 .nav-link:hover{
     color:lightslategray !important;
 }
+
+.travelCard {
+    background-image: url("../Maskgroup.png");
+    max-width: 70%;
+    height: auto;
+}
+
+.reserveModel input::placeholder, .reserveModel textarea::placeholder {
+    font-weight: 700;
+    color: black;
+}
