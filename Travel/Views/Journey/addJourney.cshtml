@@ -1,0 +1,61 @@
+﻿@model Travel.Models.Entity.Journey
+@{
+
+}
+<div class="row">
+    <h1 class="col-md-9">新增景點</h1>
+    <div class="col-md-3 position-relative">
+        <button class="btn btn-primary position-absolute bottom-0 end-0 me-3 mb-1">
+            <a class="link-underline-opacity-0 link-light" asp-controller="Admin" asp-action="Index"><i class="bi bi-box-arrow-left me-1"></i>返回</a>
+        </button>
+    </div>
+    <hr />
+</div>
+<div class="container">
+    <div class=" d-flex align-items-center justify-content-center p-2  h1">
+        <div class="travelCard rounded-5 shadow-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <div class="p-5">
+                <div class="d-flex align-items-center justify-content-center mx-5">
+                    <div class="rounded-circle bg-body-secondary p-3">
+                        <i class="bi bi-house"></i>
+                    </div>
+                    <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
+                    <div class="rounded-circle bg-body-secondary p-3">
+                        <i class="bi bi-camera"></i>
+                    </div>
+                    <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
+                    <div class="rounded-circle bg-body-secondary p-3">
+                        <i class="bi bi-cup-hot "></i>
+                    </div>
+                    <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
+                    <div class="rounded-circle bg-body-secondary p-3">
+                        <i class="bi bi-camera"></i>
+                    </div>
+                    <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
+                    <div class="rounded-circle bg-body-secondary p-3">
+                        <i class="bi bi-house"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 標籤紙 -->
+        <div class="bg-warning-subtle w-25 h-100% shadow-lg text-center">
+            <h3 class="fw-bold text-center">
+                <form method="post">
+                    <label class="form-label">行程名稱</label>
+                    <input type="text" class="form-control" asp-for="place" />
+                    <span class="text-danger" asp-validation-for="place"></span>
+                    <label class="form-label">開始時間</label>
+                    <input type="text" class="form-control" asp-for="start_date" />
+                    <span class="text-danger" asp-validation-for="start_date"></span>
+                    <label class="form-label">結束時間</label>
+                    <input type="text" class="form-control" asp-for="end_date" />
+                    <span class="text-danger" asp-validation-for="end_date"></span>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-danger">
+                        <a class="link-underline-opacity-0 link-light" asp-controller="Journey" asp-action="Index">Cancel</a>
+                    </button>
+                </form>
+        </div>
+    </div>
+</div>

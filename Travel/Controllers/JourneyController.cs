@@ -1,4 +1,3 @@
-﻿using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
@@ -15,11 +14,11 @@ namespace Travel.Controllers
 
         public JourneyController(TravelContext mvcDBContext)
         {
-            this._context = mvcDBContext;
+            _context = mvcDBContext;
         }
 
         [HttpGet]
-        public IActionResult showJourney()
+        public IActionResult Index()
         {
             var journey = _context.Journey.ToList();
             return View(journey);
@@ -34,7 +33,6 @@ namespace Travel.Controllers
         {
             var journey = new Journey
             {
-                id = Guid.NewGuid(),
                 place = view_journey.place,
                 start_date = view_journey.start_date,
                 end_date = view_journey.end_date,
@@ -42,7 +40,7 @@ namespace Travel.Controllers
 
             await _context.Journey.AddAsync(journey);
             await _context.SaveChangesAsync();
-            return RedirectToAction("showJourney","Admin");
+            return RedirectToAction("addAttraction","Admin");
         }
         [HttpPatch]
         public async Task<IActionResult> editJourney(Journey view_journey)
@@ -53,14 +51,14 @@ namespace Travel.Controllers
                 return View(view_journey);
             }
 
-            var journey = await _context.Attraction.FindAsync(view_journey.Id);
+            var journey = await _context.Journey.FindAsync(view_journey.id);
             if (journey != null)
             {
                 journey.place = view_journey.place;
                 journey.start_date = view_journey.start_date;
                 journey.end_date = view_journey.end_date;
 
-                _context.Attraction.Update(journey);
+                _context.Journey.Update(journey);
                 await _context.SaveChangesAsync();
             }
             return RedirectToAction("showJourney", "Admin");
