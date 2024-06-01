@@ -39,22 +39,24 @@
             </div>
         </div>
         <!-- 標籤紙 -->
-        <div class="bg-warning-subtle w-25 h-100% shadow-lg text-center">
+        <div class="bg-warning-subtle w-25 h-100% shadow-lg text-center p-2">
             <h3 class="fw-bold text-center">
                 <form method="post">
-                    <label class="form-label">行程名稱</label>
-                    <input type="text" class="form-control" asp-for="place" />
-                    <span class="text-danger" asp-validation-for="place"></span>
-                    <label class="form-label">開始時間</label>
-                    <input type="text" class="form-control" asp-for="start_date" />
-                    <span class="text-danger" asp-validation-for="start_date"></span>
-                    <label class="form-label">結束時間</label>
-                    <input type="text" class="form-control" asp-for="end_date" />
-                    <span class="text-danger" asp-validation-for="end_date"></span>
-                    <button type="submit" class="btn btn-primary">Save</button>
-                    <button type="button" class="btn btn-danger">
-                        <a class="link-underline-opacity-0 link-light" asp-controller="Admin" asp-action="Index">Cancel</a>
-                    </button>
+                    <h4 class="fw-bold form-label text-start">行程名稱</h4>
+                    <input type="text" class="form-control" placeholder="行程名稱" asp-for="place" />
+                    <span class="fs-5 text-danger" asp-validation-for="place"></span>
+                    <h4 class="fw-bold form-label text-start">開始時間</h4>
+                    <input type="text" class="form-control" placeholder="YYYY/MM/DD" asp-for="start_date" />
+                    <span class="fs-5 text-danger" asp-validation-for="start_date"></span>
+                    <h4 class="fw-bold form-label text-start">結束時間</h4>
+                    <input type="text" class="form-control" placeholder="YYYY/MM/DD" asp-for="end_date" />
+                    <span class="fs-5 text-danger" asp-validation-for="end_date"></span>
+                    <div class="mt-2">
+                        <button type="submit" class="btn btn-primary">保存並下一步</button>
+                        <button type="button" class="btn btn-danger">
+                            <a class="link-underline-opacity-0 link-light" asp-controller="Admin" asp-action="Index">Cancel</a>
+                        </button>
+                    </div>
                 </form>
         </div>
     </div>
