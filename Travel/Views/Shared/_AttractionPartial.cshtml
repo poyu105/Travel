@@ -1,112 +1,104 @@
-﻿<div class=" d-flex align-items-center justify-content-center p-2  h1">
-    <div class="travelCard rounded-5 shadow-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        <div class="p-5">
-            <div class="d-flex align-items-center justify-content-center mx-5">
-                <div class="rounded-circle bg-body-secondary p-3">
-                    <i class="bi bi-house"></i>
+﻿@model List<JourneyAttractionViewModel>
+
+@for (int i = Model.Count - 1; i >= 0; i--)
+{
+    var journey = Model[i].Journey;
+    var attraction = Model[i].Attraction;
+
+    <div class="d-flex align-items-center justify-content-center p-2 h1">
+        <div class="travelCard rounded-5 shadow-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <div class="p-5">
+                <div class="d-flex align-items-center justify-content-center mx-5">
+                    <div class="rounded-circle bg-body-secondary p-3">
+                        <i class="bi bi-house"></i>
+                    </div>
+                    <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
+                    <div class="rounded-circle bg-body-secondary p-3">
+                        <i class="bi bi-camera"></i>
+                    </div>
+                    <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
+                    <div class="rounded-circle bg-body-secondary p-3">
+                        <i class="bi bi-cup-hot"></i>
+                    </div>
+                    <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
+                    <div class="rounded-circle bg-body-secondary p-3">
+                        <i class="bi bi-camera"></i>
+                    </div>
+                    <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
+                    <div class="rounded-circle bg-body-secondary p-3">
+                        <i class="bi bi-house"></i>
+                    </div>
                 </div>
-                <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
-                <div class="rounded-circle bg-body-secondary p-3">
-                    <i class="bi bi-camera"></i>
-                </div>
-                <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
-                <div class="rounded-circle bg-body-secondary p-3">
-                    <i class="bi bi-cup-hot "></i>
-                </div>
-                <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
-                <div class="rounded-circle bg-body-secondary p-3">
-                    <i class="bi bi-camera"></i>
-                </div>
-                <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
-                <div class="rounded-circle bg-body-secondary p-3">
-                    <i class="bi bi-house"></i>
+            </div>
+        </div>
+        <!-- 標籤紙 -->
+        <div class="bg-warning-subtle w-25 h-100% shadow-lg text-center">
+            <h3 class="fw-bold text-center">@journey.place</h3>
+            <p class="h4">@journey.start_date-@journey.end_date</p>
+        </div>
+    </div>
+    <!-- 重複 -->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="btn-close text-center position-absolute end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                @foreach(var attr in attraction)
+                {
+                    <div class="modal-header">
+                        <h1 class="modal-title fw-bold" id="exampleModalToggleLabel">
+                            <span class="badge text-bg-dark rounded-pill">@attr.Name</span>
+                        </h1>
+                    </div>
+                    <div class="modal-body">
+                        <h4 class="fw-bold">@attr.Description</h4>
+                    </div>
+                }
+                <div class="modal-footer">
+                    <button class="btn bg-success btn-lg text-light p-2" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">確認預約</button>
                 </div>
             </div>
         </div>
     </div>
-    <!-- 標籤紙 -->
-    <div class="bg-warning-subtle w-25 h-100% shadow-lg text-center">
-        <h3 class="fw-bold text-center">
-            Taipei 101</h1>
-            <p class="h4">1/1-12/31</p>
-    </div>
-</div>
-<!-- 重複 -->
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl  modal-dialog-centered">
-        <div class="modal-content">
 
-            <div class="modal-header">
-                <h1 class="modal-title fw-bold" id="exampleModalToggleLabel"><span class="badge text-bg-dark rounded-pill">台北101</span></h1>
-                <button type="button" class="btn-close text-center" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-
-            <div class="modal-body ">
-                <h4 class="fw-bold">
-                    台北101是位於台灣台北市的一座地標性建築，是世界上最高的摩天大樓之一，也是台灣最具代表性的建築之一。<br><br>
-
-                    該建築於2004年完工，曾是全球最高的建築，直到2010年迪拜哈利法塔的建成。台北101的設計靈感來自於中國古代的“筆架式”建築結構，具有獨特的外觀特色，是現代與傳統相結合的典範。<br><br>
-
-                    這座建築擁有101層，其中包括商業辦公空間、觀光設施和豪華購物中心，提供了豐富多樣的體驗和服務。台北101的觀景台位於樓頂，遊客可以從這裡俯瞰整個台北市的壯麗景色，
-                    包括雄偉的山脈、繁華的都市景觀和壯觀的夜景。除了作為一座建築奇蹟，台北101還因其先進的抗震結構和環保設計而备受矚目。
-                    它被認為是台灣工程技術和建築設計的典範，吸引着全球各地的遊客前來參觀和探索。
-                </h4>
-
-            </div>
-            <!-- 此按鈕點擊後，是使用者確認是要這個行程，並跳轉到填寫資料頁面 -->
-            <div class="modal-footer">
-                <button class="btn bg-success btn-lg text-light p-2" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">確認預約</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- second Modal -->
-<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered  ">
-        <div class="modal-content  border border-success border-5 p-3 ">
-
-            <div class="modal-body reserveModel">
-
-                <div class="row p-1 mb-3">
-                    <div class="col-md-4">
-                        <input type="text" class="form-control form-control-lg bg-secondary-subtle" autocomplete="username" aria-required="true" placeholder="預約人姓名" />
+    <!-- second Modal -->
+    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border border-success border-5 p-3">
+                <div class="modal-body reserveModel">
+                    <div class="row p-1 mb-3">
+                        <div class="col-md-4">
+                            <input type="text" class="form-control form-control-lg bg-secondary-subtle" autocomplete="username" aria-required="true" placeholder="預約人姓名" />
+                        </div>
+                        <div class="col-6 col-md-8">
+                            <input type="text" class="form-control form-control-lg bg-secondary-subtle" autocomplete="username" aria-required="true" placeholder="身分證" />
+                        </div>
                     </div>
-                    <div class="col-6 col-md-8 ">
-                        <input type="text" class="form-control form-control-lg bg-secondary-subtle" autocomplete="username" aria-required="true" placeholder="身分證" />
+                    <div class="row p-1 mb-3">
+                        <div class="col-md-12">
+                            <input type="email" class="form-control form-control-lg bg-secondary-subtle" autocomplete="username" aria-required="true" placeholder="電子信箱" />
+                        </div>
+                    </div>
+                    <div class="row p-1 mb-3">
+                        <div class="col-md-12">
+                            <input type="text" class="form-control form-control-lg bg-dark-subtle" placeholder="日期:2023/1/1" disabled>
+                        </div>
+                    </div>
+                    <div class="row p-1 mb-3">
+                        <div class="col-md-12">
+                            <textarea class="form-control bg-secondary-subtle" placeholder="人員資訊"></textarea>
+                        </div>
+                    </div>
+                    <div class="row p-1 mb-3">
+                        <div class="col-md-9">
+                            <input type="text" class="form-control form-control-lg bg-secondary-subtle pb-5" autocomplete="username" aria-required="true" placeholder="備註" />
+                        </div>
+                        <div class="col-md-3">
+                            <button class="btn btn-success btn-lg p-4 text-lg text-center w-100">送出</button>
+                        </div>
                     </div>
                 </div>
-
-                <div class="row p-1 mb-3">
-                    <div class="col-md-12">
-                        <input type="email" class="form-control form-control-lg bg-secondary-subtle" autocomplete="username" aria-required="true" placeholder="電子信箱" />
-                    </div>
-                </div>
-
-                <div class="row p-1 mb-3">
-                    <div class="col-md-12">
-                        <input type="text" class="form-control form-control-lg bg-dark-subtle" placeholder="日期:2023/1/1" disabled>
-                    </div>
-                </div>
-
-                <div class="row p-1 mb-3">
-                    <div class="col-md-12">
-                        <textarea class="form-control bg-secondary-subtle" placeholder="人員資訊"></textarea>
-                    </div>
-                </div>
-
-                <!-- 此按鈕點擊後，使用者就預約了這個行程 -->
-                <div class="row p-1 mb-3">
-                    <div class="col-md-9">
-                        <input type="text " class="form-control form-control-lg bg-secondary-subtle pb-5" autocomplete="username" aria-required="true" placeholder="備註" />
-                    </div>
-                    <div class="col-md-3">
-                        <button class="btn btn-success btn-lg p-4 text-lg text-center  w-100">送出</button>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
-</div>
+}

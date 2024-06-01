@@ -1,11 +1,11 @@
-﻿@model List<Travel.Models.Entity.Attraction>;
+﻿@model List<JourneyAttractionViewModel>
 @{
     ViewData["Title"] = "Home Page";
 }
 <div class="row">
-    <h1 class="col-md-9">景點總覽</h1>
+    <h1 class="col-md-9">行程總覽</h1>
     <hr />
 </div>
 <div class="container">
-    
+    <partial name="_AttractionPartial" />
 </div>

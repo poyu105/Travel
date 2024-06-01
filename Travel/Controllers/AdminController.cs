@@ -20,8 +20,20 @@ namespace Travel.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var journey = _context.Journey.ToList();
-            return View(journey);
+            var journeys = _context.Journey.ToList();
+            var viewModel = new List<JourneyAttractionViewModel>();
+
+            foreach (var journey in journeys)
+            {
+                var attractions = _context.Attraction.Where(a => a.Journey_id == journey.id).ToList();
+                viewModel.Add(new JourneyAttractionViewModel
+                {
+                    Journey = journey,
+                    Attraction = attractions
+                });
+            }
+
+            return View(viewModel);
         }
 
         [HttpGet]

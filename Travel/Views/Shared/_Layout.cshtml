@@ -26,9 +26,6 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house"></i>首頁</a>
                         </li>
                         <li class="nav-item nav-item-hover col-md-auto">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Journey" asp-action="Index"><i class="bi bi-pin-map"></i>我的行程</a>
-                        </li>
-                        <li class="nav-item nav-item-hover col-md-auto">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Reservation" asp-action="Index"><i class="bi bi-calendar2-check"></i>我的預約</a>
                         </li>
                         <partial name="_AdminPartial" />
@@ -49,7 +46,6 @@
     </header>
     <main role="main" class="pb-3 grid gap-3  container">
         @RenderBody()
-        
     </main>
 
     <footer class="border-top footer text-muted">
