@@ -25,14 +25,17 @@ namespace Travel.Controllers
         }
 
         [HttpGet]
-        public IActionResult addAttraction()
+        public IActionResult addAttraction(int journeyId)
         {
-            var viewModel = new AttractionListViewModel();
+            var viewModel = new AttractionListViewModel
+            {
+                JourneyId = journeyId
+            };
             return View(viewModel);
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddAttraction(AttractionListViewModel viewModel)
+        public async Task<IActionResult> addAttraction(AttractionListViewModel viewModel)
         {
             if (!ModelState.IsValid)
             {
@@ -51,6 +54,9 @@ namespace Travel.Controllers
                     ModelState.AddModelError("Attractions.Name", $"景點名稱 '{attraction.Name}' 已存在，請輸入不同的名稱!");
                     return View(viewModel);
                 }
+
+                // Set the JourneyId for each attraction
+                attraction.Journey_id = viewModel.JourneyId;
                 await _context.Attraction.AddAsync(attraction);
             }
 
@@ -58,7 +64,8 @@ namespace Travel.Controllers
             return RedirectToAction("Index", "Admin");
         }
 
-    [HttpPost]
+
+        [HttpPost]
         public async Task<IActionResult> delAttraction(Guid id)
         {
             var attraction = await _context.Attraction.FindAsync(id);

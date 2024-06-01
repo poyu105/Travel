@@ -44,7 +44,8 @@ namespace Travel.Controllers
 
             await _context.Journey.AddAsync(journey);
             await _context.SaveChangesAsync();
-            return RedirectToAction("addAttraction","Admin");
+            // Pass the new Journey ID to the addAttraction action
+            return RedirectToAction("addAttraction", "Admin", new { journeyId = journey.id });
         }
         [HttpPatch]
         public async Task<IActionResult> editJourney(Journey view_journey)
