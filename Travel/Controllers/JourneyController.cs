@@ -53,14 +53,14 @@ namespace Travel.Controllers
                 return View(view_journey);
             }
 
-            var journey = await _context.Attraction.FindAsync(view_journey.Id);
+            var journey = await _context.Journey.FindAsync(view_journey.id);
             if (journey != null)
             {
                 journey.place = view_journey.place;
                 journey.start_date = view_journey.start_date;
                 journey.end_date = view_journey.end_date;
 
-                _context.Attraction.Update(journey);
+                _context.Journey.Update(journey);
                 await _context.SaveChangesAsync();
             }
             return RedirectToAction("showJourney", "Admin");
