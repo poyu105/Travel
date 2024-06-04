@@ -9,6 +9,6 @@ namespace Travel.Models.Entity
         public string Name { get; set; }
         [Required(ErrorMessage = "描述是必須的!")]
         public string Description { get; set; }
-        public int Journey_id { get; set; }
+        public int JourneyId { get; set; }
     }
 }

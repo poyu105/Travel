@@ -26,7 +26,7 @@ namespace Travel.Controllers
 
             foreach (var journey in journeys)
             {
-                var attractions = _context.Attraction.Where(a => a.Journey_id == journey.id).ToList();
+                var attractions = _context.Attraction.Where(a => a.JourneyId == journey.id).ToList();
                 viewModel.Add(new JourneyAttractionViewModel
                 {
                     Journey = journey,
@@ -63,7 +63,7 @@ namespace Travel.Controllers
                 }
 
                 // Set the JourneyId for each attraction
-                attraction.Journey_id = viewModel.JourneyId;
+                attraction.JourneyId = viewModel.JourneyId;
                 await _context.Attraction.AddAsync(attraction);
             }
 
@@ -76,7 +76,7 @@ namespace Travel.Controllers
         public async Task<IActionResult> delAttraction(int journey_id)
         {
             // 找到与给定 journey_id 相关的所有 Attraction
-            var attractions = _context.Attraction.Where(a => a.Journey_id == journey_id);
+            var attractions = _context.Attraction.Where(a => a.JourneyId == journey_id);
 
             // 循环删除每个匹配的 Attraction
             foreach (var attraction in attractions)
@@ -96,7 +96,7 @@ namespace Travel.Controllers
         {
             // 從資料庫獲取具有相同 JourneyId 的景點
             var attractions = await _context.Attraction
-                .Where(a => a.Journey_id == journeyId)
+                .Where(a => a.JourneyId == journeyId)
                 .Take(5)
                 .ToListAsync();
 

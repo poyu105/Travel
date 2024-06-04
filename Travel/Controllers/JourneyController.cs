@@ -16,13 +16,6 @@ namespace Travel.Controllers
         {
             _context = mvcDBContext;
         }
-
-        [HttpGet]
-        public IActionResult Index()
-        {
-            var journey = _context.Journey.ToList();
-            return View(journey);
-        }
         [HttpGet]
         public IActionResult addJourney()
         {

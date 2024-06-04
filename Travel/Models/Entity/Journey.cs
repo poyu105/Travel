@@ -11,5 +11,6 @@ namespace Travel.Models.Entity
         public DateTime? start_date { get; set; }
         [Required(ErrorMessage = "結束時間是必須的!")]
         public DateTime? end_date { get; set; }
+        public List<Attraction> Attractions { get; set; }
     }
 }

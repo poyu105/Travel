@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 using Travel.Areas.Identity.Data;
 using Travel.Models;
 using Travel.Models.Entity;
+
 
 namespace Travel.Controllers
 {
@@ -19,59 +22,55 @@ namespace Travel.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var reservation = _context.Reservation.ToList();
-            return View(reservation);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var reservations = _context.Reservation
+                                        .Include(r => r.Journey)
+                                        .Include(r => r.Journey.Attractions)
+                                        .Include(r => r.User)
+                                        .Where(r => r.UserId == userId)
+                                        .ToList();
+
+            var reservationViewModels = reservations.Select(r => new ReservationViewModel
+            {
+                Journey = r.Journey,
+                Attraction = r.Journey.Attractions.ToList(),
+                User = r.User,
+                Reservations = new List<Reservation> { r },
+                People = (int)r.people,
+                Remark = r.remark
+            }).ToList();
+
+            return View(reservationViewModels);
         }
+
         [HttpGet]
         public IActionResult Reservation()
         {
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> addReservation(Reservation view_reservation)
+        public async Task<IActionResult> addReservation(ReservationViewModel view_reservation, int _people, string _remark)
         {
-            var reservation = new Reservation
+            if (view_reservation.Journey != null)
             {
-                people = view_reservation.people,
-                status = view_reservation.status,
-                remark = view_reservation.remark,
-            };
+                var reservation = new Reservation
+                {
+                    JourneyId = view_reservation.Journey.id,
+                    UserId = view_reservation.User.Id,
+                    people = _people,
+                    remark = _remark,
+                    status = 1
+                };
 
-            await _context.Reservation.AddAsync(reservation);
-            await _context.SaveChangesAsync();
-            return RedirectToAction("addReservation", "Admin");
-        }
-        [HttpPatch]
-        public async Task<IActionResult> editReservation(Reservation view_reservation)
-        {
-            // 檢查是否輸入資料
-            if (!ModelState.IsValid)
-            {
-                return View(view_reservation);
-            }
-
-            var reservation = await _context.Reservation.FindAsync(view_reservation.id);
-            if (reservation != null)
-            {
-                reservation.people = view_reservation.people;
-                reservation.status = view_reservation.status;
-                reservation.remark = view_reservation.remark;
-
-                _context.Reservation.Update(reservation);
+                await _context.Reservation.AddAsync(reservation);
                 await _context.SaveChangesAsync();
+                return RedirectToAction("Index", "Reservation");
             }
-            return RedirectToAction("showReservation", "Admin");
-        }
-        [HttpPost]
-        public async Task<IActionResult> deleteReservation(int id)
-        {
-            var reservation = await _context.Reservation.FindAsync(id);
-            if (reservation != null)
+            else
             {
-                _context.Reservation.Remove(reservation);
-                await _context.SaveChangesAsync();
+                return RedirectToAction("Index", "Home");
             }
-            return RedirectToAction("showReservation", "Admin");
         }
     }
 }

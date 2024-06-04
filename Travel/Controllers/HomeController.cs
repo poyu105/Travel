@@ -34,7 +34,7 @@ namespace Travel.Controllers
 
             foreach (var journey in journeys)
             {
-                var attractions = _context.Attraction.Where(a => a.Journey_id == journey.id).ToList();
+                var attractions = _context.Attraction.Where(a => a.JourneyId == journey.id).ToList();
                 viewModel.Add(new ReservationViewModel
                 {
                     Journey = journey,
