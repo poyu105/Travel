@@ -24,11 +24,6 @@ namespace Travel.Controllers
         [HttpPost]
         public async Task<IActionResult> addJourney(Journey view_journey)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(view_journey);
-            }
-
             // 檢查是否有重複的景點名稱，除了當前的景點名稱
             if (_context.Journey.Any(a => a.place == view_journey.place && a.id != view_journey.id))
             {
