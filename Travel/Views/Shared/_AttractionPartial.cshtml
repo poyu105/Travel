@@ -1,10 +1,11 @@
-﻿@model List<JourneyAttractionViewModel>
+﻿@model List<ReservationViewModel>
 @using Essentials
 
 @for (int i = Model.Count - 1; i >= 0; i--)
 {
     var journey = Model[i].Journey;
-    var attractions = Model[i].Attraction; // 使用複數形式以提高可讀性
+    var attractions = Model[i].Attraction;
+    var user = Model[i].User;
     var modalId = $"exampleModal-{i}";
     var modalToggleId = $"exampleModalToggle-{i}";
     var modalToggle2Id = $"exampleModalToggle2-{i}";
@@ -77,30 +78,35 @@
                 <div class="modal-body reserveModel">
                     <div class="row p-1 mb-3">
                         <div class="col-md-4">
-                            <input type="text" class="form-control form-control-lg bg-secondary-subtle" autocomplete="username" aria-required="true" placeholder="預約人姓名" />
+                            <label>預約人姓名<span>(當前帳號)</span></label>
+                            <input type="text" class="form-control form-control-lg bg-dark-subtle" autocomplete="username" aria-required="true" placeholder="預約人姓名" value="@user.UserName" readonly />
                         </div>
                         <div class="col-6 col-md-8">
-                            <input type="text" class="form-control form-control-lg bg-secondary-subtle" autocomplete="username" aria-required="true" placeholder="身分證" />
+                            <label>身分證字號<span>(當前帳號)</span></label>
+                            <input type="text" class="form-control form-control-lg bg-dark-subtle" autocomplete="username" aria-required="true" placeholder="身分證" value="@user.IdNumber" readonly />
                         </div>
                     </div>
                     <div class="row p-1 mb-3">
                         <div class="col-md-12">
-                            <input type="email" class="form-control form-control-lg bg-secondary-subtle" autocomplete="username" aria-required="true" placeholder="電子信箱" />
+                            <label>電子信箱<span>(可修改)</span></label>
+                            <input type="email" class="form-control form-control-lg bg-secondary-subtle" autocomplete="username" aria-required="true" placeholder="電子信箱" value="@user.Email"/>
                         </div>
                     </div>
                     <div class="row p-1 mb-3">
                         <div class="col-md-12">
-                            <input type="text" class="form-control form-control-lg bg-dark-subtle" placeholder="日期:2023/1/1" disabled>
+                            <input type="text" class="form-control form-control-lg bg-dark-subtle" placeholder="日期:@journey.start_date.ToString("yyyy/MM/dd") ~ @journey.end_date.ToString("yyyy/MM/dd")" disabled>
                         </div>
                     </div>
                     <div class="row p-1 mb-3">
                         <div class="col-md-12">
-                            <textarea class="form-control bg-secondary-subtle" placeholder="人員資訊"></textarea>
+                            <label>人員資訊<span>(人數)</span></label>
+                            <input class="form-control bg-secondary-subtle" placeholder="人員資訊" type="number" value="1" min="1"/>
                         </div>
                     </div>
                     <div class="row p-1 mb-3">
                         <div class="col-md-9">
-                            <input type="text" class="form-control form-control-lg bg-secondary-subtle pb-5" autocomplete="username" aria-required="true" placeholder="備註" />
+                            <label>備註</label>
+                            <input type="text" class="form-control form-control-lg bg-secondary-subtle pb-5" autocomplete="username" aria-required="true" placeholder="備註" value="無"/>
                         </div>
                         <div class="col-md-3">
                             <button class="btn btn-success btn-lg p-4 text-lg text-center w-100">送出</button>
