@@ -52,10 +52,6 @@ namespace Travel.Controllers
         [HttpPost]
         public async Task<IActionResult> editJourney(Journey view_journey)
         {
-            if(!ModelState.IsValid)
-            {
-                return View(view_journey);
-            }
             var journey = await _context.Journey.FindAsync(view_journey.id);
             if (journey != null)
             {
