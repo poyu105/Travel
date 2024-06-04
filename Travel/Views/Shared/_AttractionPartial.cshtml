@@ -14,111 +14,113 @@
         var modalToggleId = $"exampleModalToggle-{i}";
         var modalToggle2Id = $"exampleModalToggle2-{i}";
 
-        <div class="d-flex align-items-center justify-content-center p-2 h1">
-            <div class="travelCard rounded-5 shadow-lg" data-bs-toggle="modal" data-bs-target="#@modalId">
-                <div class="p-5">
-                    <div class="d-flex align-items-center justify-content-center mx-5">
-                        <div class="rounded-circle bg-body-secondary p-3">
-                            <i class="bi bi-house"></i>
-                        </div>
-                        <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
-                        <div class="rounded-circle bg-body-secondary p-3">
-                            <i class="bi bi-camera"></i>
-                        </div>
-                        <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
-                        <div class="rounded-circle bg-body-secondary p-3">
-                            <i class="bi bi-cup-hot"></i>
-                        </div>
-                        <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
-                        <div class="rounded-circle bg-body-secondary p-3">
-                            <i class="bi bi-camera"></i>
-                        </div>
-                        <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
-                        <div class="rounded-circle bg-body-secondary p-3">
-                            <i class="bi bi-house"></i>
+        <div id="card">
+            <div class="d-flex align-items-center justify-content-center p-2 h1">
+                <div class="travelCard rounded-5 shadow-lg" data-bs-toggle="modal" data-bs-target="#@modalId">
+                    <div class="p-5">
+                        <div class="d-flex align-items-center justify-content-center mx-5">
+                            <div class="rounded-circle bg-body-secondary p-3">
+                                <i class="bi bi-house"></i>
+                            </div>
+                            <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
+                            <div class="rounded-circle bg-body-secondary p-3">
+                                <i class="bi bi-camera"></i>
+                            </div>
+                            <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
+                            <div class="rounded-circle bg-body-secondary p-3">
+                                <i class="bi bi-cup-hot"></i>
+                            </div>
+                            <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
+                            <div class="rounded-circle bg-body-secondary p-3">
+                                <i class="bi bi-camera"></i>
+                            </div>
+                            <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
+                            <div class="rounded-circle bg-body-secondary p-3">
+                                <i class="bi bi-house"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- 標籤紙 -->
+                <div class="bg-warning-subtle w-25 h-100% shadow-lg text-center p-2">
+                    <h3 class="fw-bold text-center">@journey.place</h3>
+                    <p class="h4">From: @journey.start_date.ToString("yyyy/MM/dd") <br />To: @journey.end_date.ToString("yyyy/MM/dd")</p>
+                </div>
             </div>
-            <!-- 標籤紙 -->
-            <div class="bg-warning-subtle w-25 h-100% shadow-lg text-center p-2">
-                <h3 class="fw-bold text-center">@journey.place</h3>
-                <p class="h4">From: @journey.start_date.ToString("yyyy/MM/dd") <br />To: @journey.end_date.ToString("yyyy/MM/dd")</p>
-            </div>
-        </div>
-        <!-- 重複 -->
-        <!-- Modal -->
-        <div class="modal fade" id="@modalId" tabindex="-1" aria-labelledby="@modalToggleId" aria-hidden="true">
-            <div class="modal-dialog modal-xl modal-dialog-centered">
-                <div class="modal-content">
-                    <button type="button" class="btn-close text-center position-absolute end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div class="modal-header">
-                        <h1 class="modal-title fw-bold" id="@modalToggleId">
-                            <span class="badge text-bg-dark rounded-pill">@journey.place</span>
-                        </h1>
-                    </div>
-                    @foreach (var attr in attractions)
-                    {
+            <!-- 重複 -->
+            <!-- Modal -->
+            <div class="modal fade" id="@modalId" tabindex="-1" aria-labelledby="@modalToggleId" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-centered">
+                    <div class="modal-content">
+                        <button type="button" class="btn-close text-center position-absolute end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
                         <div class="modal-header">
-                            <h1 class="modal-title fw-bold" id="exampleModalToggleLabel">
-                                <span class="badge text-bg-secondary rounded-pill">@attr.Name</span>
+                            <h1 class="modal-title fw-bold" id="@modalToggleId">
+                                <span class="badge text-bg-dark rounded-pill">@journey.place</span>
                             </h1>
                         </div>
-                        <div class="modal-body">
-                            <h4 class="fw-bold">@attr.Description</h4>
+                        @foreach (var attr in attractions)
+                        {
+                            <div class="modal-header">
+                                <h1 class="modal-title fw-bold" id="exampleModalToggleLabel">
+                                    <span class="badge text-bg-secondary rounded-pill">@attr.Name</span>
+                                </h1>
+                            </div>
+                            <div class="modal-body">
+                                <h4 class="fw-bold">@attr.Description</h4>
+                            </div>
+                        }
+                        <div class="modal-footer">
+                            <button class="btn bg-success btn-lg text-light p-2" data-bs-target="#@modalToggle2Id" data-bs-toggle="modal">確認預約</button>
                         </div>
-                    }
-                    <div class="modal-footer">
-                        <button class="btn bg-success btn-lg text-light p-2" data-bs-target="#@modalToggle2Id" data-bs-toggle="modal">確認預約</button>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- second Modal -->
-        <div class="modal fade" id="@modalToggle2Id" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content border border-success border-5 p-3">
-                    <form class="modal-body reserveModel" asp-action="addReservation" asp-controller="Reservation">
-                        <input type="hidden" asp-for="@journey.id" />
-                        <input type="hidden" asp-for="@user.Id" />
-                        <div class="row p-1 mb-3">
-                            <div class="col-md-4">
-                                <label>預約人姓名<span>(當前帳號)</span></label>
-                                <input type="text" class="form-control form-control-lg bg-dark-subtle" autocomplete="username" aria-required="true" placeholder="預約人姓名" value="@user.UserName" readonly />
+            <!-- second Modal -->
+            <div class="modal fade" id="@modalToggle2Id" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content border border-success border-5 p-3">
+                        <form class="modal-body reserveModel" asp-action="addReservation" asp-controller="Reservation">
+                            <input type="hidden" asp-for="@journey.id" />
+                            <input type="hidden" asp-for="@user.Id" />
+                            <div class="row p-1 mb-3">
+                                <div class="col-md-4">
+                                    <label>預約人姓名<span>(當前帳號)</span></label>
+                                    <input type="text" class="form-control form-control-lg bg-dark-subtle" autocomplete="username" aria-required="true" placeholder="預約人姓名" value="@user.UserName" readonly />
+                                </div>
+                                <div class="col-6 col-md-8">
+                                    <label>身分證字號<span>(當前帳號)</span></label>
+                                    <input type="text" class="form-control form-control-lg bg-dark-subtle" autocomplete="username" aria-required="true" placeholder="身分證" value="@user.IdNumber" readonly />
+                                </div>
                             </div>
-                            <div class="col-6 col-md-8">
-                                <label>身分證字號<span>(當前帳號)</span></label>
-                                <input type="text" class="form-control form-control-lg bg-dark-subtle" autocomplete="username" aria-required="true" placeholder="身分證" value="@user.IdNumber" readonly />
+                            <div class="row p-1 mb-3">
+                                <div class="col-md-12">
+                                    <label>電子信箱<span>(可修改)</span></label>
+                                    <input type="email" class="form-control form-control-lg bg-secondary-subtle" autocomplete="username" aria-required="true" placeholder="電子信箱" value="@user.Email" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="row p-1 mb-3">
-                            <div class="col-md-12">
-                                <label>電子信箱<span>(可修改)</span></label>
-                                <input type="email" class="form-control form-control-lg bg-secondary-subtle" autocomplete="username" aria-required="true" placeholder="電子信箱" value="@user.Email" />
+                            <div class="row p-1 mb-3">
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control form-control-lg bg-dark-subtle" placeholder="日期:@journey.start_date.ToString("yyyy/MM/dd") ~ @journey.end_date.ToString("yyyy/MM/dd")" disabled>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row p-1 mb-3">
-                            <div class="col-md-12">
-                                <input type="text" class="form-control form-control-lg bg-dark-subtle" placeholder="日期:@journey.start_date.ToString("yyyy/MM/dd") ~ @journey.end_date.ToString("yyyy/MM/dd")" disabled>
+                            <div class="row p-1 mb-3">
+                                <div class="col-md-12">
+                                    <label>人員資訊<span>(人數)</span></label>
+                                    <input class="form-control bg-secondary-subtle" placeholder="人員資訊" type="number" value="1" min="1" name="_people" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="row p-1 mb-3">
-                            <div class="col-md-12">
-                                <label>人員資訊<span>(人數)</span></label>
-                                <input class="form-control bg-secondary-subtle" placeholder="人員資訊" type="number" value="1" min="1" name="_people" />
+                            <div class="row p-1 mb-3">
+                                <div class="col-md-9">
+                                    <label>備註</label>
+                                    <input type="text" class="form-control form-control-lg bg-secondary-subtle pb-5" autocomplete="username" aria-required="true" placeholder="備註" value="無" name="_remark" />
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="btn btn-success btn-lg p-4 text-lg text-center w-100">送出</button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row p-1 mb-3">
-                            <div class="col-md-9">
-                                <label>備註</label>
-                                <input type="text" class="form-control form-control-lg bg-secondary-subtle pb-5" autocomplete="username" aria-required="true" placeholder="備註" value="無" name="_remark" />
-                            </div>
-                            <div class="col-md-3">
-                                <button class="btn btn-success btn-lg p-4 text-lg text-center w-100">送出</button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -135,60 +137,62 @@ else
         var modalToggleId = $"exampleModalToggle-{i}";
         var modalToggle2Id = $"exampleModalToggle2-{i}";
 
-        <div class="d-flex align-items-center justify-content-center p-2 h1">
-            <div class="travelCard rounded-5 shadow-lg" data-bs-toggle="modal" data-bs-target="#@modalId">
-                <div class="p-5">
-                    <div class="d-flex align-items-center justify-content-center mx-5">
-                        <div class="rounded-circle bg-body-secondary p-3">
-                            <i class="bi bi-house"></i>
-                        </div>
-                        <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
-                        <div class="rounded-circle bg-body-secondary p-3">
-                            <i class="bi bi-camera"></i>
-                        </div>
-                        <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
-                        <div class="rounded-circle bg-body-secondary p-3">
-                            <i class="bi bi-cup-hot"></i>
-                        </div>
-                        <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
-                        <div class="rounded-circle bg-body-secondary p-3">
-                            <i class="bi bi-camera"></i>
-                        </div>
-                        <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
-                        <div class="rounded-circle bg-body-secondary p-3">
-                            <i class="bi bi-house"></i>
+        <div id="card">
+            <div class="d-flex align-items-center justify-content-center p-2 h1">
+                <div class="travelCard rounded-5 shadow-lg" data-bs-toggle="modal" data-bs-target="#@modalId">
+                    <div class="p-5">
+                        <div class="d-flex align-items-center justify-content-center mx-5">
+                            <div class="rounded-circle bg-body-secondary p-3">
+                                <i class="bi bi-house"></i>
+                            </div>
+                            <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
+                            <div class="rounded-circle bg-body-secondary p-3">
+                                <i class="bi bi-camera"></i>
+                            </div>
+                            <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
+                            <div class="rounded-circle bg-body-secondary p-3">
+                                <i class="bi bi-cup-hot"></i>
+                            </div>
+                            <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
+                            <div class="rounded-circle bg-body-secondary p-3">
+                                <i class="bi bi-camera"></i>
+                            </div>
+                            <span class="bg-body-secondary" style="width: 100px;height: 7px;"></span>
+                            <div class="rounded-circle bg-body-secondary p-3">
+                                <i class="bi bi-house"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- 標籤紙 -->
+                <div class="bg-warning-subtle w-25 h-100% shadow-lg text-center p-2">
+                    <h3 class="fw-bold text-center">@journey.place</h3>
+                    <p class="h4">From: @journey.start_date.ToString("yyyy/MM/dd") <br />To: @journey.end_date.ToString("yyyy/MM/dd")</p>
+                </div>
             </div>
-            <!-- 標籤紙 -->
-            <div class="bg-warning-subtle w-25 h-100% shadow-lg text-center p-2">
-                <h3 class="fw-bold text-center">@journey.place</h3>
-                <p class="h4">From: @journey.start_date.ToString("yyyy/MM/dd") <br />To: @journey.end_date.ToString("yyyy/MM/dd")</p>
-            </div>
-        </div>
-        <!-- 重複 -->
-        <!-- Modal -->
-        <div class="modal fade" id="@modalId" tabindex="-1" aria-labelledby="@modalToggleId" aria-hidden="true">
-            <div class="modal-dialog modal-xl modal-dialog-centered">
-                <div class="modal-content">
-                    <button type="button" class="btn-close text-center position-absolute end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div class="modal-header">
-                        <h1 class="modal-title fw-bold" id="@modalToggleId">
-                            <span class="badge text-bg-dark rounded-pill">@journey.place</span>
-                        </h1>
-                    </div>
-                    @foreach (var attr in attractions)
-                    {
+            <!-- 重複 -->
+            <!-- Modal -->
+            <div class="modal fade" id="@modalId" tabindex="-1" aria-labelledby="@modalToggleId" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-centered">
+                    <div class="modal-content">
+                        <button type="button" class="btn-close text-center position-absolute end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
                         <div class="modal-header">
-                            <h1 class="modal-title fw-bold" id="exampleModalToggleLabel">
-                                <span class="badge text-bg-secondary rounded-pill">@attr.Name</span>
+                            <h1 class="modal-title fw-bold" id="@modalToggleId">
+                                <span class="badge text-bg-dark rounded-pill">@journey.place</span>
                             </h1>
                         </div>
-                        <div class="modal-body">
-                            <h4 class="fw-bold">@attr.Description</h4>
-                        </div>
-                    }
+                        @foreach (var attr in attractions)
+                        {
+                            <div class="modal-header">
+                                <h1 class="modal-title fw-bold" id="exampleModalToggleLabel">
+                                    <span class="badge text-bg-secondary rounded-pill">@attr.Name</span>
+                                </h1>
+                            </div>
+                            <div class="modal-body">
+                                <h4 class="fw-bold">@attr.Description</h4>
+                            </div>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
