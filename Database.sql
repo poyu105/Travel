@@ -25,8 +25,8 @@ CREATE TABLE Reservation (
   id INT IDENTITY(1,1) PRIMARY KEY,
   people INT NOT NULL,
   [status] INT NOT NULL,
-  user_id INT FOREIGN KEY REFERENCES [User](id),
-  Journey_id INT NOT NULL FOREIGN KEY REFERENCES Journey(id),
+  UserId nvarchar(450) FOREIGN KEY REFERENCES [AspNetUsers](id),
+  JourneyId INT NOT NULL FOREIGN KEY REFERENCES Journey(id),
   remark VARCHAR(255),
   created_at DATE NOT NULL DEFAULT GetDate(),
   updated_at DATE NOT NULL DEFAULT GetDate()
@@ -45,7 +45,7 @@ CREATE TABLE Attraction (
   id INT IDENTITY(1,1) PRIMARY KEY,
   [name] VARCHAR(255),
   [description] VARCHAR(255) NOT NULL,
-  Journey_id INT NOT NULL FOREIGN KEY REFERENCES Journey(id),
+  JourneyId INT NOT NULL FOREIGN KEY REFERENCES Journey(id),
   created_at DATE NOT NULL DEFAULT GetDate(),
   updated_at DATE NOT NULL DEFAULT GetDate()
 );
