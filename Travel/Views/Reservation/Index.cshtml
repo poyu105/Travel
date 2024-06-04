@@ -99,7 +99,7 @@
                         <div class="row p-1 mb-3">
                             <div class="col-md-12">
                                 <label>電子信箱<span>(可修改)</span></label>
-                                <input type="email" class="form-control form-control-lg bg-secondary-subtle" autocomplete="username" aria-required="true" placeholder="電子信箱" value="@user.Email" />
+                                <input type="email" class="form-control form-control-lg bg-dark-subtle" autocomplete="username" aria-required="true" placeholder="電子信箱" value="@user.Email" readonly />
                             </div>
                         </div>
                         <div class="row p-1 mb-3">
@@ -110,13 +110,13 @@
                         <div class="row p-1 mb-3">
                             <div class="col-md-12">
                                 <label>人員資訊<span>(人數)</span></label>
-                                <input class="form-control bg-secondary-subtle" placeholder="人員資訊" type="number" value="@Model[i].People" min="1"/>
+                                <input class="form-control bg-dark-subtle" placeholder="人員資訊" type="number" value="@Model[i].People" min="1" readonly />
                             </div>
                         </div>
                         <div class="row p-1 mb-3">
                             <div class="col-md-9">
                                 <label>備註</label>
-                                <input type="text" class="form-control form-control-lg bg-secondary-subtle pb-5" autocomplete="username" aria-required="true" placeholder="備註" value="@Model[i].Remark"/>
+                                <input type="text" class="form-control form-control-lg bg-dark-subtle pb-5" autocomplete="username" aria-required="true" placeholder="備註" value="@Model[i].Remark" readonly />
                             </div>
                         </div>
                     </form>
