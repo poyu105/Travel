@@ -4,10 +4,13 @@
 @for (int i = Model.Count - 1; i >= 0; i--)
 {
     var journey = Model[i].Journey;
-    var attraction = Model[i].Attraction;
+    var attractions = Model[i].Attraction; // 使用複數形式以提高可讀性
+    var modalId = $"exampleModal-{i}";
+    var modalToggleId = $"exampleModalToggle-{i}";
+    var modalToggle2Id = $"exampleModalToggle2-{i}";
 
     <div class="d-flex align-items-center justify-content-center p-2 h1">
-        <div class="travelCard rounded-5 shadow-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <div class="travelCard rounded-5 shadow-lg" data-bs-toggle="modal" data-bs-target="#@modalId">
             <div class="p-5">
                 <div class="d-flex align-items-center justify-content-center mx-5">
                     <div class="rounded-circle bg-body-secondary p-3">
@@ -40,16 +43,16 @@
     </div>
     <!-- 重複 -->
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="@modalId" tabindex="-1" aria-labelledby="@modalToggleId" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content">
                 <button type="button" class="btn-close text-center position-absolute end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
                 <div class="modal-header">
-                    <h1 class="modal-title fw-bold" id="exampleModalToggleLabel">
+                    <h1 class="modal-title fw-bold" id="@modalToggleId">
                         <span class="badge text-bg-dark rounded-pill">@journey.place</span>
                     </h1>
                 </div>
-                @foreach(var attr in attraction)
+                @foreach (var attr in attractions)
                 {
                     <div class="modal-header">
                         <h1 class="modal-title fw-bold" id="exampleModalToggleLabel">
@@ -61,14 +64,14 @@
                     </div>
                 }
                 <div class="modal-footer">
-                    <button class="btn bg-success btn-lg text-light p-2" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">確認預約</button>
+                    <button class="btn bg-success btn-lg text-light p-2" data-bs-target="#@modalToggle2Id" data-bs-toggle="modal">確認預約</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- second Modal -->
-    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal fade" id="@modalToggle2Id" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content border border-success border-5 p-3">
                 <div class="modal-body reserveModel">
@@ -78,7 +81,7 @@
                         </div>
                         <div class="col-6 col-md-8">
                             <input type="text" class="form-control form-control-lg bg-secondary-subtle" autocomplete="username" aria-required="true" placeholder="身分證" />
-                        </div>                   
+                        </div>
                     </div>
                     <div class="row p-1 mb-3">
                         <div class="col-md-12">
