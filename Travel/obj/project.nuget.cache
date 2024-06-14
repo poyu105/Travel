@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "M58Jn/Z7O+y0DPDBXQdHs+cXxbsUnZZzDFLSItZl/4AGhhGTZxK+Qe2UYnIcJkjCTUMfWuViGp6Vasc3TuIItw==",
+  "dgSpecHash": "MTPHycAZhFsEqEPg3jRBBcMQULvEcpQBfHWj4qlWAGccsmM5aAXt1oK4tYq0sFVMbTzKVIYF12iNGrPK1u6cjQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\chen0\\code\\c#\\MVC_FinalProject\\Travel\\Travel\\Travel.csproj",
+  "projectFilePath": "C:\\Users\\chen0\\code\\c#\\TravelCopy\\Travel\\Travel.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chen0\\.nuget\\packages\\automapper\\6.1.0\\automapper.6.1.0.nupkg.sha512",
     "C:\\Users\\chen0\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",

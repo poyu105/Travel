@@ -17,163 +17,163 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Travel
 build_property.RootNamespace = Travel
-build_property.ProjectDir = C:\Users\chen0\code\c#\MVC_FinalProject\Travel\Travel\
+build_property.ProjectDir = C:\Users\chen0\code\c#\TravelCopy\Travel\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\chen0\code\c#\MVC_FinalProject\Travel\Travel
+build_property.MSBuildProjectDirectory = C:\Users\chen0\code\c#\TravelCopy\Travel
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWxDaGFuZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/Account/Logout.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGVsZXRlUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/Account/Manage/Email.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/Account/Manage/Email.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/Account/Manage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1N0YXR1c01lc3NhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNlbmRFbWFpbENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Views/Admin/addAttraction.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Views/Admin/addAttraction.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cYWRkQXR0cmFjdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Views/Admin/editAttraction.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Views/Admin/editAttraction.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cZWRpdEF0dHJhY3Rpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Views/Admin/Index.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Views/Home/Index.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Views/Journey/addJourney.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Views/Journey/addJourney.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm91cm5leVxhZGRKb3VybmV5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Views/Journey/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm91cm5leVxJbmRleC5jc2h0bWw=
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Views/Journey/editJourney.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm91cm5leVxlZGl0Sm91cm5leS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Views/Reservation/Index.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Views/Reservation/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Views/Shared/Error.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Views/Shared/_AdminPartial.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Views/Shared/_AdminPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Views/Shared/_AttractionPartial.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Views/Shared/_AttractionPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BdHRyYWN0aW9uUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Views/_ViewImports.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Views/_ViewStart.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chen0/code/c\#/MVC_FinalProject/Travel/Travel/Views/Shared/_Layout.cshtml]
+[C:/Users/chen0/code/c\#/TravelCopy/Travel/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-vxzsoq9bda
